@@ -93,7 +93,8 @@ def main():
     print("----------------------------------------")
 
     # Kontrola přihlašovacích údajů
-    if username not in REGISTERED_USERS or REGISTERED_USERS[username] != password:
+    if (username not in REGISTERED_USERS or
+            REGISTERED_USERS[username] != password):
         print("unregistered user, terminating the program..")
         return
 
@@ -129,7 +130,10 @@ def main():
     print("----------------------------------------")
     for length, occurrences in sorted(stats['word_lengths'].items()):
         print(
-            f"{length:3}|{'*' * occurrences:{stats['word_lengths_max']}}|{occurrences}")
+            f"{length:3}|"
+            f"{'*' * occurrences:{stats['word_lengths_max']}}|"
+            f"{occurrences}"
+        )
 
 
 if __name__ == "__main__":
